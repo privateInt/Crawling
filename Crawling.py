@@ -1,3 +1,5 @@
+# selenium과 크롬 웹드라이버를 사용한 구글 이미지 크롤링
+
 from urllib.request import urlopen
 from urllib.request import urlretrieve
 from urllib.parse import quote_plus
@@ -32,7 +34,7 @@ html = driver.page_source
 soup = BeautifulSoup(html, features="html.parser")
 img = soup.select('img')
 
-n = -3
+n = -3 # 코드 작동시 불필요한 이미지가 3장 추가된 후 시작됨(원인은 모르겠음)
 imgurl = []
 
 for i in img:
